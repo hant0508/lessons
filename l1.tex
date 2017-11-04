@@ -57,7 +57,7 @@
 		\item	\lcode{#include <iostream>} и \lcode{using namespace std;} --- для вывода текста
 		\item	\lcode{int main()} --- точка входа; с неё начинается {\bf любая} программа
 		\item	\lcode{cout << "текст";} --- выводит \lcode{текст} на экран
-		\item	\lcode{endl} --- перевод строки
+		\item	\lcode{endl;} --- перевод строки
 	\end{itemize}
 \end{frame}
 
@@ -204,6 +204,7 @@ else
 \end{frame}
 
 \begin{frame}
+	\frametitle{Задачи}
 	\prblm{Вычислить модуль введённого числа.}
 	\prblm{Определить, является ли введённое число чётным.}
 	\prblm{Найти максимальное из двух чисел.}
@@ -229,7 +230,8 @@ else
 	\begin{itemize}
 		\item \lcode{bool} --- логический тип данных
 		\item \lcode{!} --- оператор отрицания
-		\item \lcode{0 == false; !0 == true // любое число, кроме нуля}
+		\item \lcode{0 == false, !0 == true // любое число, кроме нуля}
+		\item \lcode{a = !!a; // 0, если a была 0; иначе 1}
 		\item Операторы сравнения возвращают результат логического типа
 	\end{itemize}
 \end{frame}

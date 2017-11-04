@@ -3,6 +3,7 @@
 *.snm
 *.toc
 *.out
+*.vrb
 t.cpp
 t
 _minted-*
