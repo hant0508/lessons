@@ -3,15 +3,10 @@ using namespace std;
 
 int main()
 {
-	int a, b, c;
-	cin >> a >> b >> c;
-	if (a > 0 && b > 0 && c > 0)
-	{
-		if (a >= b+c || b >= a+c || c >= a+b)
-			cout << "Нет";
-		else
-			cout << "Да";
-	}
+	int a;
+	cin >> a;
+	if (a % 2) // аналогично (a % 2 != 0)
+		cout << "Нечётное";
 	else
-		cout << "Нет";
+		cout << "Чётное";
 }

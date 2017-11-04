@@ -1,21 +1,12 @@
-// Калькулятор
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	double a, b;
-	char c;
-	cin >> a >> c >> b;
-
-	if (c == '+')
-		cout << a+b;
-	else if (c == '-')
-		cout << a-b;
-	else if (c == '*')
-		cout << a*b;
-	else if (c == '/' && b != 0)
-		cout << a/b;
+	int a, b;
+	cin >> a >> b;
+	if (a > b)
+		cout << a;
 	else
-		cout << "Ошибка";
+		cout << b;
 }

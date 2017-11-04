@@ -3,10 +3,10 @@ using namespace std;
 
 int main()
 {
-	int a;
-	cin >> a;
-	if (a % 2) // аналогично (a % 2 != 0)
-		cout << "Нечётное";
-	else
-		cout << "Чётное";
+	int a, b;
+	cin >> a >> b;
+	a = a + b;
+	b = a - b;
+	a = a - b;
+	cout << a << " " << b;
 }

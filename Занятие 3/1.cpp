@@ -3,8 +3,10 @@ using namespace std;
 
 int main()
 {
-	int a;
-	cin >> a;
-	if (a < 0) a = -a;
-	cout << a;
+	int a, b;
+	cin >> a >> b;
+	int c = a;
+	a = b;
+	b = c;
+	cout << a << " " << b;
 }
