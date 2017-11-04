@@ -1,8 +1,10 @@
+// Бисер
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	int a;
-	cout << "a^20 равно: " << a << endl;
+	int n;
+	cin >> n;
+	cout << n + 1;
 }

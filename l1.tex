@@ -1,4 +1,4 @@
-\documentclass[PDF,10pt,usenames,dvipsnames]{beamer}
+\documentclass[PDF,10pt,usenames,dvipsnames,t,fragile]{beamer}
 \usepackage[utf8]{inputenc} % прикручиваем русский язык
 \usepackage[russian]{babel}
 
@@ -15,7 +15,9 @@
 \setbeamertemplate{itemize items}[circle] % маркер в списках
 
 \renewcommand{\baselinestretch}{0.9} % межстрочный интервал
-\setbeamersize{text margin left=2mm,text margin right=2mm} % отступы
+\setbeamersize{text margin left=4mm,text margin right=2mm} % отступы
+\addtolength{\headsep}{3mm}
+
 \setbeamertemplate{navigation symbols}{} % отключение клавиш навигации
 
 \usepackage{xcolor} % цвета
@@ -24,64 +26,70 @@
 \setbeamercolor{frametitle}{fg=black}
 
 \usepackage{relsize} % вопросительный знак
-\newcommand{\bigqm}[1][1]{\text{\larger[#1]{\textbf{?}}}}
+\newcommand{\bigqm}[1][1]{\text{\rm\larger[#1]{\textbf{?}}}}
 
 \everymath{\displaystyle} % нормальные дроби
 
 \usepackage{ragged2e} % включаем поддержку переносов
-\justifying % включаем переносы
+%\justifying % включаем переносы
 
-\newcommand{\cpp}[1]{\textcolor{blue!40!black}{\tt #1}} % код
-\newcommand{\prblm}[1]{{\rm\bigqm[1]} {#1 \\} \vspace{10pt}} % задача (inline)
+\usepackage{minted} % настройка кода
+\usemintedstyle{vs}
+\renewcommand{\fcolorbox}[4][]{#4}
+\newminted[code]{cpp}{mathescape, tabsize=4, obeytabs, linenos}
+\newmintinline[lcode]{cpp}{mathescape, tabsize=4, obeytabs}
+
+\newcommand{\prblm}[1]{{\bigqm[1]} {#1 \\} \vspace{-6pt} \\} % задача (inline)
 \newcommand{\inp}{\\ \vspace{5pt} {\bf Входные данные} \\ \vspace{5pt}} % заголовок input для задач
 \newcommand{\out}{\\ \vspace{5pt} {\bf Результат работы} \\ \vspace{5pt}} % заголовок output для задач 
+\newcommand{\tb}{\\ \hline} % конец строки в таблице
 
 % таблица с примерами входных данных и результатами работы
 \newenvironment{ex}{\\ \vspace{5pt}{\bf Пример} \\
-\vspace{5pt} \tabularx{\textwidth}{|X|X|}
-\hline Входные данные & Результат работы \\ \hline}{\endtabularx}
+\tabularx{\textwidth}{|X|X|}
+\hline Входные данные & Результат работы \tb}{\endtabularx}
 
 \begin{document}
 
-\begin{frame}[t] 
-	\frametitle{Первая программа} \pause
+\begin{frame}[fragile]
+	\frametitle{Первая программа}
 	\begin{itemize}
-		\item	\cpp{\#include<iostream>} и \cpp{using namespace std;} --- поддержка вывода текста \pause
-		\item	\cpp{int main()} --- точка входа; с неё начинается {\bf любая} программа \pause
-		\item	\cpp{cout << "текст";} --- выводит \cpp{текст} на экран \pause
-		\item	\cpp{endl} --- перевод строки \pause
+		\item	\lcode{#include <iostream>} и \lcode{using namespace std;} --- для вывода текста
+		\item	\lcode{int main()} --- точка входа; с неё начинается {\bf любая} программа
+		\item	\lcode{cout << "текст";} --- выводит \lcode{текст} на экран
+		\item	\lcode{endl} --- перевод строки
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[t]
-	\frametitle{Задачи} \pause
-	\prblm{Напишите программу, которая выводит на экран ваше имя.} \pause
-	\prblm{Выведите на экран звёздочки в виде прямоугольного треугольника. \\ *\\ ** \\ *** \\ **** \\ *****} \pause
-	\prblm{Вычислите, используя арифметические операции и скобки: \\ \vspace{5pt} $25+17$; \hspace{12pt} $\frac{5}{4}$; \hspace{12pt} $1+\frac{1}{1+\frac{1}{2}}$.} \pause
+\begin{frame}
+	\frametitle{Задачи}
+	\prblm{Напишите программу, которая выводит на экран ваше имя.}
+	\prblm{Выведите на экран звёздочки в виде прямоугольного треугольника. \\ *\\ ** \\ *** \\ **** \\ *****}
+	\prblm{Вычислите, используя арифметические операции и скобки: \\ \vspace{5pt} $25+17$; \hspace{12pt} $\frac{5}{4}$; \hspace{12pt} $1+\frac{1}{1+\frac{1}{2}}$.}
 \end{frame}
 
-\begin{frame}[t]
-	\frametitle{Основные типы данных} \pause
+\begin{frame}
+	\frametitle{Основные типы данных} 
 	\begin{itemize}
-		\item \cpp{int} --- целое число \pause
-		\item \cpp{float} --- число с плавающей точкой \pause
-		\item \cpp{string} --- строка \pause
-		\item \cpp{char} --- символ \pause
-		\item	\cpp{cin >> переменная;} --- считывает значение в \cpp{переменную}\pause
+		\item \lcode{int} --- целое число
+		\item \lcode{float} --- число с плавающей точкой
+		\item \lcode{string} --- строка
+		\item \lcode{char} --- символ
+		\item	\lcode{cin >> переменная;} --- считывает значение в \lcode{переменную}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[t]
-	\frametitle{Задачи} \pause
-	\prblm{Сложите два целых числа.} \pause
-	\prblm{Вычислите площадь квадрата по длине стороны.} \pause
-	\prblm{Переведите заданное количество метров в километры.} \pause
-	\prblm{Напечатайте последнюю цифру заданного натурального числа.} \pause
-	\prblm{Вычислите $a^4$, использовав не более двух операций умножения.} \pause
-	\prblm{Вычислите $a^{20}$, использовав не более пяти операций умножения.} \pause
+\begin{frame}
+	\frametitle{Задачи}
+	\prblm{Сложите два целых числа.}
+	\prblm{Вычислите площадь квадрата по длине стороны.}
+	\prblm{Переведите заданное количество метров в километры.}
+	\prblm{Напечатайте последнюю цифру заданного натурального числа.}
+	\prblm{Вычислите $a^4$, использовав не более двух операций умножения.}
+	\prblm{Вычислите $a^{20}$, использовав не более пяти операций умножения.}
 \end{frame}
 
-\begin{frame}[t]
+\begin{frame}
 	\frametitle{Материалы}
 	{\bf \href{http://savthe.com/edu}{savthe.com/edu}}
 	\begin{itemize}
@@ -92,9 +100,9 @@
 	{\bf \href{https://github.com/hant05080/lessons}{github.com/hant0508\textcolor{gray}0/lessons}}
 \end{frame}
 
-\begin{frame}[t]
+\begin{frame}
 	\frametitle{Бисер}
-	В шкатулке хранится разноцветный бисер (или бусины). Все бусины имеют
+	В шкатулке хранится разноцветный бисер или бусины). Все бусины имеют
 	одинаковую форму, размер и вес. Бусины могут быть одного из N различных
 	цветов. В шкатулке много бусин каждого цвета.  Требуется определить
 	минимальное число бусин, которые можно не глядя вытащить из шкатулки так,
@@ -104,11 +112,11 @@
 	\out
 	Напечатайте одно целое число --- минимальное количество бусин.
 	\begin{ex}
-	3 & 4 \\ \hline
+	3 & 4 \tb
 	\end{ex}
 \end{frame}
 
-\begin{frame}[t]
+\begin{frame}
 	\frametitle{Следующее и предыдущее}
 	Напишите программу, которая считывает целое число и выводит текст с
 	упоминанием следующего и предыдущего для него чисел. 
@@ -117,24 +125,113 @@
 	\out
 	Напечатайте текст, аналогичный приведённому в примере.
 	\begin{ex}
-	42 & Следующее число после 42: 43 \newline Предыдущее число перед 42: 41 \\ \hline 
+	42 & Следующее число после 42: 43 \newline Предыдущее число перед 42: 41 \tb 
 	\end{ex}	
 \end{frame}
 
-\begin{frame}[t]
+\begin{frame}
 	\frametitle{Магазин канцелярских товаров}
-	Однажды, посетив магазин канцелярских товаров, Вася купил X карандашей, Y ручек
-	и Z фломастеров. Известно, что цена ручки на 2 рубля больше цены карандаша и
+	Однажды, посетив магазин канцелярских товаров, Вася купил \lcode{x} карандашей, \lcode{y} ручек
+	и \lcode{z} фломастеров. Известно, что цена ручки на 2 рубля больше цены карандаша и
 	на 7 рублей меньше цены фломастера. Также известно, что стоимость карандаша
 	составляет 3 рубля. Требуется определить общую стоимость покупки. 
 	\inp
-	На вход подаются 3 натуральных числа, каждое из которых не превосходит $10^9$
+	На вход подаются 3 натуральных числа, не превосходящих $10^9$
 	\out
-	Напечатайте одно целое число --- стоимость покупки в рублях.
+	Напечатайте одно натуральное число --- стоимость покупки в рублях.
 	\begin{ex}
-	1 1 1 & 20 \\ \hline
-	1 2 3 & 49 \\ \hline
+	1 1 1 & 20 \tb
+	1 2 3 & 49 \tb
 	\end{ex}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Сумма цифр}
+	Найдите сумму цифр трёхзначного натурального числа.
+	\inp
+	На вход подаётся трёхзначное натуральное число.
+	\out
+	Напечатайте одно натуральное число --- сумму его цифр.
+	\begin{ex}
+		100 & 1 \tb
+		123 & 6 \tb
+	\end{ex}
+\end{frame}
+
+\begin{frame}
+	\frametitle{МКАД}
+	Длина Московской кольцевой автомобильной дороги  --- 109 километров. Байкер Вася
+	стартует с первого километра МКАД и едет со скоростью \lcode{v} километров в час. На
+	какой отметке он остановится через \lcode{t} часов?
+	\inp
+	На вход подаются два целых числа \lcode{t} и \lcode{v} ($0 \leq t,v \leq 10000$).
+	\out
+	Напечатайте единственное число от 1 до 109 --- километр МКАД, на котором остановится Вася.
+	\begin{ex}
+		60 2 & 12 \tb
+		109 42 & 1 \tb
+		0 146 & 1 \tb
+	\end{ex}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Инструкции ветвления}
+	\begin{code}
+if (/* условие */)
+{
+	// некоторые действия
+	// выполнятся, если условие верно
+}
+else
+{
+	// если условие неверно
+}
+	\end{code}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Операторы сравнения}
+	\begin{itemize}
+		\item \lcode{==} \ равно (не путать с =) 
+		\item \lcode{!=} \ не равно
+		\item \lcode{<} \ \ \ меньше
+		\item \lcode{>} \ \ \ больше
+		\item \lcode{<=} \ меньше либо равно
+		\item \lcode{>=} \ больше либо равно
+		\item \lcode{&&} \ логическое И
+		\item \lcode{||} \ логическое ИЛИ
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\prblm{Вычислить модуль введённого числа.}
+	\prblm{Определить, является ли введённое число чётным.}
+	\prblm{Найти максимальное из двух чисел.}
+	\prblm{Проверить, могут ли 3 заданных числа быть сторонами треугольника.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Калькулятор}
+	Напишите калькулятор, выполняющий одно из 4 арифметических действий над двумя заданными вещественными числами.
+	\inp
+	На вход подаётся вещественное число a, символ s и вещественное число b ($|a|,|b| \leq 10^4, c \in \{\text{'+', '-', '*', '/'}\}$).
+	\out
+	Напечатайте одно число --- результат вычисления, либо сообщение об ошибке.
+	\begin{ex}
+	2+3 & 5 \tb
+	3.14*2.72 & 8.5408 \tb
+	42/0 & Ошибка \tb
+	\end{ex}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Логические выражения}
+	\begin{itemize}
+		\item \lcode{bool} --- логический тип данных
+		\item \lcode{!} --- оператор отрицания
+		\item \lcode{0 == false; !0 == true // любое число, кроме нуля}
+		\item Операторы сравнения возвращают результат логического типа
+	\end{itemize}
 \end{frame}
 
 \end{document}
