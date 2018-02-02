@@ -35,8 +35,9 @@
 \usepackage{minted} % настройка кода
 \usemintedstyle{vs}
 \renewcommand{\fcolorbox}[4][]{#4}
-\newminted[code]{cpp}{tabsize=4, obeytabs, escapeinside=||}
-\newmintinline[lcode]{cpp}{tabsize=4, obeytabs}
+\newminted[code]{c_cpp.py:CppLexer -x}{tabsize=4, obeytabs, escapeinside=||}
+%\newminted[code]{cpp}{tabsize=4, obeytabs, escapeinside=||}
+\newmintinline[lcode]{c_cpp.py:CppLexer -x}{tabsize=4, obeytabs}
 
 \newcommand{\prblm}[1]{{\bigqm[1]} {#1 \\} \vspace{-6pt} \\} % задача (inline)
 \newcommand{\inp}{\vspace{4pt}\\ \vspace{4pt}{\bf Входные данные} \\} % заголовок input для задач
@@ -512,6 +513,29 @@ cout << endl; // после вывода массива переходим на 
 	\prblm{В массиве переставьте 1-й и 2-й элементы, 3-й и 4-й, 5-й и 6-й и т.д.}
 	\prblm{Замените нулями все элементы массива, являющиеся делителями максимального элемента.}
 	\prblm{Переставьте минимальный и максимальный элементы массива.}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Строки}
+	\begin{code}
+string s = "hello"; // объявление строки
+int n = s.size(); // размер строки (n == 5)
+// Работа со строкой аналогична работе с массивом из char
+cout << s[3] << s[4] << s[2] << endl; // lol
+s[0] = 'H';
+// Выводить строку можно целиком
+cout << s << endl; // Hello
+// Строки можно складывать (конкатенация)
+string w = ", world!";
+s += w;
+cout << s << ' ' << s.size() << endl; // Hello, world! 13
+// Удаление из строки
+s.erase(5, 2); // (с какого символа, сколько символов)
+cout << s << ' ' << s.size() << endl; // Helloworld! 11
+// Вставка в строку
+s.insert(5, ", new "); // (c какого символа, строка для вставки)
+cout << s << ' ' << s.size() << endl; // Hello, new world! 17
+	\end{code}
 \end{frame}
 
 
