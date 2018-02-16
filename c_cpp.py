@@ -222,7 +222,7 @@ class CppLexer(CFamilyLexer):
                 'alignas', 'alignof', 'static_assert', 'noexcept', 'override',
                 'final', 'cout', 'cin', 'cerr', 'erase', 'insert', 'size', 'sin',
                 'cos', 'pow', 'sqrt', 'endl', 'push_back', 'push_front', 'top',
-                'pop', 'push'), suffix=r'\b'), Keyword),
+                'pop', 'push', 'getline'), suffix=r'\b'), Keyword),
             (r'char(16_t|32_t)\b', Keyword.Type),
             (r'(class)(\s+)', bygroups(Keyword, Text), 'classname'),
             # C++11 raw strings
