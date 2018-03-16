@@ -1,9 +1,25 @@
 ## Учебные материалы
+### Учебники
 * [Презентация](l1.pdf)
 * [Учебник по С++](Учебник.pdf)
 * [Задачник по С++](Задачник.pdf)
+* [Шпаргалка по Vim](vimtips.pdf)
+* [Учебник по Vim](prosto-o-vim.pdf)
 * [Таблица символов ASCII](ASCII.pdf)
-* [Задачи школьного этапа ВОШ 2017/18](problems_9-11.pdf)
+### Задачи
+* [ACMP](https://acmp.ru/asp/do/index.asp?main=course&id_course=1)
+* Задачи школьного этапа ВОШ
+	* [2017/18](Задачи/2017-1.pdf)
+	* [2016/17](Задачи/2016-1.pdf)
+	* [2015/16](Задачи/2015-1.pdf)
+	* [2014/15](Задачи/2014-1.pdf)
+* [ОГЭ (sdamgia.ru)](https://inf-oge.sdamgia.ru/test?theme=20)
+* ЕГЭ (sdamgia.ru)
+	* [Вычисление контрольного значения](https://inf-ege.sdamgia.ru/test?theme=292)
+	* [Поиск основного подмножества значений](https://inf-ege.sdamgia.ru/test?theme=294)
+	* [Анализ пар значений](https://inf-ege.sdamgia.ru/test?theme=197)
+	* [Разные задачи](https://inf-ege.sdamgia.ru/test?theme=303)
+* [ЕГЭ (kpolyakov.spb.ru)](http://kpolyakov.spb.ru/school/ege/gen.php?action=viewAllEgeNo&egeId=27&cat89=on&cat90=on)
 
 ## Установка и настройка VimC++
 1. Скачать установщик VimC++ с сайта http://savthe.com/edu и выполнить установку программы
