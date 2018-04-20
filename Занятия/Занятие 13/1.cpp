@@ -1,25 +1,26 @@
-// Унарная систем счисления
+// ОГЭ-2
 #include <iostream>
 using namespace std;
 
-void translate(int n)
-{
-	if (n < 0)
-	{
-		cout << '-';
-		n = -n;
-	}
-
-	while (n--)
-		cout << '|' << ' ';
-	cout << endl;
-}
-
 int main()
 {
-	int x, y, z;
-	cin >> x >> y >> z;
-	translate(x);
-	translate(y);
-	translate(z);
+	int n;
+	cin >> n;
+
+	int m;
+	cin >> m;
+	for (int i = 1; i < n; ++i)
+	{
+		int a;
+		cin >> a;
+		if (a < m)
+			m = a;
+	}
+
+	cout << m << endl;
+
+	if (m < -15)
+		cout << "YES" << endl;
+	else 
+		cout << "NO" << endl;
 }

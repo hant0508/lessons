@@ -1,30 +1,20 @@
+// ОГЭ-3
 #include <iostream>
 using namespace std;
 
-int reverse(int n)
-{
-	int res = 0;
-	while (n)
-	{
-		res *= 10;
-		res += n%10;
-		n /= 10;
-	}
-	return res;
-}
-
 int main()
 {
-	int n;
-	cin >> n;
-	while (n--)
+	int s = 0;
+	while (1)
 	{
 		int a;
 		cin >> a;
-		cout << a;
-		if (a == reverse(a))
-			cout << ": Yes" << endl;
-		else
-		   	cout << ": No" << endl;
+		if (a == 0)
+			break;
+
+		if (a > 9 && a < 100 & a % 8 == 0)
+			s += a;
 	}
+
+	cout << s << endl;
 }
