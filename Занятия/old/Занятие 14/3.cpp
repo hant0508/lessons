@@ -1,3 +1,4 @@
+// Суммы цифр
 #include <iostream>
 using namespace std;
 
