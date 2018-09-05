@@ -3,12 +3,19 @@
 
 \begin{frame}[fragile]
 	\frametitle{Первая программа}
-	\begin{itemize}
-		\item	\lcode{#include <iostream>} и \lcode{using namespace std;} -- для вывода текста
-		\item	\lcode{int main()} -- точка входа; с неё начинается {\bf любая} программа
-		\item	\lcode{cout << "текст";} -- выводит \lcode{текст} на экран
-		\item	\lcode{endl;} -- перевод строки
-	\end{itemize}
+	\begin{code}
+#include <iostream> // подключаем библиотеку ввода/вывода текста
+using namespace std; // it's a kind of magic :)
+
+int main() // начало программы (т.н. точка входа)
+{
+	cout << "Hello, world!" << endl; // вывод текста
+                                     // и перенос строки
+}
+	\end{code}
+	Обратите внимание на синтаксис. Директива \lcode{#include} начинается с
+	символа \lcode{#}, строковые константы (текст) записываются в кавычках, в
+	конце большинства команд ставится точка с запятой. 
 \end{frame}
 
 \begin{frame}
@@ -18,15 +25,26 @@
 	\prblm{Вычислите, используя арифметические операции и скобки: \\ \vspace{5pt} $25+17$; \hspace{12pt} $\frac{5}{4}$; \hspace{12pt} $1+\frac{1}{1+\frac{1}{2}}$.}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{Основные типы данных} 
-	\begin{itemize}
-		\item \lcode{int} -- целое число
-		\item \lcode{float} -- число с плавающей точкой
-		\item \lcode{string} -- строка
-		\item \lcode{char} -- символ
-		\item	\lcode{cin >> переменная;} -- считывает значение в \lcode{переменную}
-	\end{itemize}
+	\begin{code}
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i = 42; // целое число
+	double d = 3.1415; // вещественное число
+	string s = "Hello!"; // строка
+	char c = '+'; // символ (обратите внимание на кавычки)
+	bool b = true; // логический тип (true / false)
+	
+	int a; // создали целочисленную переменную
+	cin >> a; // и попросили ввести число c клавиатуры
+}
+	\end{code}
+	Обратите внимание на направление "стрелочек": \\ 
+	\lcode{cin >> a; // Ввод с клавиатуры в переменную а}
+	\lcode{cout << a; // Вывод на экран значения переменной а}
 \end{frame}
 
 \begin{frame}
