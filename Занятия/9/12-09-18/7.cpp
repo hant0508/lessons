@@ -1,3 +1,4 @@
+// Напечатайте последнюю цифру заданного натурального числа.
 #include <iostream>
 using namespace std;
 

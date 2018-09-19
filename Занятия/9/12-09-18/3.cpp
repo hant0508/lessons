@@ -1,3 +1,4 @@
+// Вычислите, используя арифметические операции и скобки.
 #include <iostream>
 using namespace std;
 

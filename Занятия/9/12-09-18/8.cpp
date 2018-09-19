@@ -1,3 +1,4 @@
+// Вычислите a^4 , использовав не более двух операций умножения.
 #include <iostream>
 using namespace std;
 

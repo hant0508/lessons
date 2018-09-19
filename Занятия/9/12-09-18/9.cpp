@@ -1,3 +1,4 @@
+// Вычислите a^20 , использовав не более пяти операций умножения.
 #include <iostream>
 using namespace std;
 

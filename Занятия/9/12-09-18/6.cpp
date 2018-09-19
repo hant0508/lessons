@@ -1,3 +1,4 @@
+// Переведите заданное количество метров в километры.
 #include <iostream>
 using namespace std;
 

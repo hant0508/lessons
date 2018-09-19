@@ -1,3 +1,4 @@
+// Вычислите площадь квадрата по длине стороны.
 #include <iostream>
 using namespace std;
 

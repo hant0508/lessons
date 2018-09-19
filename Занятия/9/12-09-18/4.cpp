@@ -1,3 +1,4 @@
+// Сложите два целых числа.
 #include <iostream>
 using namespace std;
 
