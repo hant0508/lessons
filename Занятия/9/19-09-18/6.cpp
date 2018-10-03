@@ -1,3 +1,4 @@
+// Вычислить модуль введённого числа
 #include <iostream>
 using namespace std;
 

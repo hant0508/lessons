@@ -1,3 +1,4 @@
+// Найти максимальное из двух чисел
 #include <iostream>
 using namespace std;
 

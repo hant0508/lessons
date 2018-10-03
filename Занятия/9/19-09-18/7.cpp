@@ -1,3 +1,4 @@
+// Определить, является ли введённое число чётным
 #include <iostream>
 using namespace std;
 
