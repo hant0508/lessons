@@ -1,3 +1,4 @@
+// Напечатайте все целые числа (квадраты чисел; чётные числа) 0 до n
 #include <iostream>
 using namespace std;
 

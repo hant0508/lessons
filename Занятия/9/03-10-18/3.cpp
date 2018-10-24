@@ -1,3 +1,4 @@
+// Напечатайте все делители числа n
 #include <iostream>
 using namespace std;
 
