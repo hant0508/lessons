@@ -262,4 +262,31 @@ unsigned long long fib(int n)
 	\end{ex}
 \end{frame}
 
+\begin{frame}[fragile]
+	\frametitle{Работа с файлами}
+Для работы с файловой системой используется библиотека \lcode{fstream}. Загрузив
+	файлы на чтение или на запись с ними можно работать, как с потоками
+	(например \lcode{cin, cout}).
+	\begin{code}
+#include <fstream> // библиотека для работы с файлами
+using namespace std;
+
+int main()
+{
+	ifstream input("input.txt"); // открыть файл на чтение
+	ofstream out("out.txt"); // открыть файл на запись
+
+	if (!input || !out)
+	{
+		cout << "Ошибка загрузки файла" << endl;
+		return 0;
+	}
+	
+	string s;
+	while (getline(input, s))
+		out << s << endl;
+}
+	\end{code}
+\end{frame}
+
 \end{document}
