@@ -38,8 +38,8 @@
 \usepackage{minted} % настройка кода
 \usemintedstyle{vs}
 \renewcommand{\fcolorbox}[4][]{#4}
-\newminted[code]{c_cpp.py:CppLexer -x}{tabsize=4, obeytabs, escapeinside=||}
-%\newminted[code]{cpp}{tabsize=4, obeytabs, escapeinside=||}
+\newminted[code]{c_cpp.py:CppLexer -x}{tabsize=4, obeytabs, escapeinside=~~}
+%\newminted[code]{cpp}{tabsize=4, obeytabs, escapeinside=~~}
 \newmintinline[lcode]{c_cpp.py:CppLexer -x}{tabsize=4, obeytabs}
 
 \newcommand{\prblm}[1]{{\bigqm[1]} {#1 \\} \vspace{-6pt} \\} % задача (inline)

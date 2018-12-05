@@ -1,4 +1,4 @@
-// От 1 до n
+// Напечатайте все числа от 1 до n
 #include <iostream>
 using namespace std;
 
