@@ -1,18 +1,17 @@
-// Сумма цифр числа
+// Вычислите сумму цифр данного числа
 #include <iostream>
 using namespace std;
 
-int sum(int n)
+int sumOfDigits(int n)
 {
-	if (n > 9)
-		return n%10 + sum(n/10);
-	else
-		return n;
+	if (n > 0)
+		return n % 10 + sumOfDigits(n / 10);
+	return 0;
 }
 
 int main()
 {
 	int n;
 	cin >> n;
-	cout << sum(n) << endl;
+	cout << sumOfDigits(n);
 }
