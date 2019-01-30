@@ -1,3 +1,4 @@
+// Переставьте минимальный и максимальный элементы массива
 #include <iostream>
 using namespace std;
 

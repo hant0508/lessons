@@ -1,3 +1,4 @@
+// Вычислите сумму квадратов положительных элементов массива
 #include <iostream>
 using namespace std;
 
@@ -12,13 +13,10 @@ int main()
 	}
 	cout << endl;
 
-	double sum = 0, num = 0;
+	int sum = 0;
 	for (int i = 0; i < n; ++i)
-		if (a[i] < 0)
-		{
-			sum += a[i];
-			num++;
-		}
+		if (a[i] > 0)
+			sum += a[i] * a[i];
 
-	cout << sum/num << endl;
+	cout << sum << endl;
 }

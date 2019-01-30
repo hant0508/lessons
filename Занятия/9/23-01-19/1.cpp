@@ -1,3 +1,4 @@
+// Вычислите произведение элементов массива, значения которых попадают в отрезок [l, r]
 #include <iostream>
 using namespace std;
 
@@ -15,9 +16,8 @@ int main()
 	int mult = 1;
 	int l, r;
 	cin >> l >> r;
-
 	for (int i = l; i <= r; ++i)
-			mult *= a[i];
+		mult *= a[i];
 
 	cout << mult << endl;
 }

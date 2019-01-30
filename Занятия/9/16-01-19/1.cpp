@@ -1,3 +1,4 @@
+// Вычислите сумму элементов массива
 #include <iostream>
 using namespace std;
 
@@ -12,13 +13,9 @@ int main()
 	}
 	cout << endl;
 
-	for (int i = 0; i < n-1; i+=2)
-	{
-		int t = a[i];
-		a[i] = a[i+1];
-		a[i+1] = t;
-	}
-
+	int sum = 0;
 	for (int i = 0; i < n; ++i)
-		cout << a[i] << ' ';
+		sum += a[i];
+
+	cout << sum << endl;
 }
