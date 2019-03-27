@@ -1,3 +1,4 @@
+// Определите, сколько из 10 введённых символов являются буквами
 #include <iostream>
 using namespace std;
 

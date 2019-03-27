@@ -1,3 +1,4 @@
+// Определите, является ли введённый символ цифрой
 #include <iostream>
 using namespace std;
 

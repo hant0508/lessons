@@ -1,3 +1,4 @@
+// Проверьте, верно ли расставлены скобки в строке
 #include <iostream>
 using namespace std;
 

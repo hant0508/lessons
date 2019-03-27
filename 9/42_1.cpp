@@ -1,3 +1,4 @@
+// Замените в строке все символы x на y
 #include <iostream>
 using namespace std;
 

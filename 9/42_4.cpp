@@ -1,3 +1,4 @@
+// Замените в строке все символы x на число 58
 #include <iostream>
 using namespace std;
 

@@ -1,3 +1,4 @@
+// Определите, каких букв в строке больше: маленьких или больших
 #include <iostream>
 using namespace std;
 

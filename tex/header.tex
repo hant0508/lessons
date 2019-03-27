@@ -21,8 +21,6 @@
 \setbeamersize{text margin left=4mm,text margin right=2mm} % отступы
 \addtolength{\headsep}{3mm}
 
-\setbeamertemplate{navigation symbols}{} % отключение клавиш навигации
-
 \usepackage{graphicx} % картинки
 \usepackage{tikz}
 \usepackage{xcolor} % цвета
@@ -52,3 +50,7 @@
 \newenvironment{ex}{\vspace{4pt}\\ \vspace{4pt}{\bf Пример} \\
 \tabularx{\textwidth}{|>{\tt}X|>{\tt}X|}
 \hline \sf Входные данные & \sf Результат работы \tb}{\endtabularx}
+
+% отключение клавиш навигации и нумерация слайдов
+\setbeamertemplate{navigation symbols}{}
+\addtobeamertemplate{navigation symbols}{}{\small\color{gray}\insertframenumber\hspace{5pt}}
