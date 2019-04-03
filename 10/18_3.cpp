@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	ifstream input ("matrix.txt");
+	ifstream input ("m.txt");
 
 	if (!input)
 	{
@@ -13,8 +13,8 @@ int main()
 		return 0;
 	}
 	
-	int m, n;
-	input >> m >> n;
+	int n;
+	input >> n;
 
 	int res = 0;
 	int p, q;

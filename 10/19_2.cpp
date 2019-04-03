@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	ifstream input ("matrix.txt");
+	ifstream input ("m.txt");
 
 	if (!input)
 	{
@@ -14,15 +14,14 @@ int main()
 		return 0;
 	}
 	
-	int m, n;
-	input >> m >> n;
-	vector<int> row(m);
+	int n;
+	input >> n;
+	vector<int> row(n);
 	vector<int> col(n);
 
 	int res = 0;
 
-	for (int i = 0; i < m; ++i)
-	{
+	for (int i = 0; i < n; ++i)
 		for (int j = 0; j < n; ++j)
 		{
 			int a;
@@ -30,13 +29,10 @@ int main()
 			row[i] += a;
 			col[j] += a;
 		}
-	}
 
-	for (int i = 0; i < n; ++i) // имеет смысл только при n == m
-	{
+	for (int i = 0; i < n; ++i)
 		if (row[i] + col[i] == 0)
 			res++;
-	}
 
 	cout << res << endl;
 }
